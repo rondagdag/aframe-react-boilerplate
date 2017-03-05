@@ -1,6 +1,6 @@
 import 'aframe';
 import 'aframe-animation-component';
-import 'aframe-text-component';
+import 'aframe-leap-hands';
 import 'babel-polyfill';
 import {Entity, Scene} from 'aframe-react';
 import React from 'react';
@@ -10,6 +10,7 @@ import Camera from './components/Camera';
 import Text from './components/Text';
 import Sky from './components/Sky';
 
+require('aframe-leap-hands').registerAll();
 class VRScene extends React.Component {
   constructor(props) {
     super(props);
@@ -33,6 +34,8 @@ class VRScene extends React.Component {
             animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
 >
           </a-cursor>
+          <a-entity leap-hand="hand: left"></a-entity>
+          <a-entity leap-hand="hand: right"></a-entity>
         </Camera>
 
         <Sky src="url(https://rawgit.com/aframevr/assets/gh-pages/360-image-gallery-boilerplate/img/sechelt.jpg)"/>
@@ -40,7 +43,7 @@ class VRScene extends React.Component {
         <Text
           text='Hello World!'
           color='#DADADA'
-          position='-1.75 1 -3'/>
+          position='5.5 1 -3' scale="15 15 15"/>
 
         <Entity light={{type: 'ambient', color: '#888'}}/>
         <Entity light={{type: 'directional', intensity: 0.5}} position='-1 1 0'/>

@@ -7,6 +7,6 @@ export default props => {
   delete extraProps.text;
 
   return <Entity
-    text={{text: props.text}} material={{color: props.color}}
+    text={{value: props.text}} material={{color: props.color}}
     {...extraProps}/>
 };
