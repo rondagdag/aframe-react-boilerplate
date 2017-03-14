@@ -4,8 +4,6 @@
   "description": "Boilerplate for building virtual reality experiences with A-Frame and React.",
   "dependencies": {
     "aframe": "^0.5.0",
-    "aframe-animation-component": "^3.0.4",
-    "aframe-bmfont-text-component": "^0.1.4",
     "aframe-leap-hands": "^0.7.0",
     "aframe-react": "^3.4.0",
     "babel-polyfill": "^6.3.14",
